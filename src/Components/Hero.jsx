@@ -38,16 +38,19 @@ const useStyles = createUseStyles({
     minWidth: 300,
     "@media(max-width:600px)": {
       width: "100%",
-      maxWidth: "unset"
-    }
+      maxWidth: "unset",
+    },
   },
 });
 
 export const Hero = () => {
   const classes = useStyles();
   let elements = [
+    "",
     <img src={portrait} className={classes.portrait} />,
-    <h1 className={classes.heroText}>Hey there, I'm <span className={classes.name}>Chris</span>!</h1>,
+    <h1 className={classes.heroText}>
+      Hey there, I'm <span className={classes.name}>Chris</span>!
+    </h1>,
     <h2 className={classes.subText}>I write software and stuff.</h2>,
   ];
   const heroAnimation = useTransition(elements, {
@@ -61,16 +64,14 @@ export const Hero = () => {
       y: 0,
       opacity: 1,
     },
-    trail: 700
+    trail: 750,
   });
 
   return (
     <div className={classes.sectionStyle}>
       <div className={classes.content}>
         {heroAnimation((style, item) => (
-          <animated.div style={style}>
-            {item}
-          </animated.div>
+          <animated.div style={style}>{item}</animated.div>
         ))}
       </div>
     </div>
