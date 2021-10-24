@@ -8,7 +8,7 @@ const useStyles = createUseStyles({
   sectionStyle: {
     width: "100%",
     height: "100vh",
-    background: "red",
+    background: "#ce0909",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
