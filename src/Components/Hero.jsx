@@ -1,5 +1,4 @@
 import React from "react";
-import portrait from "../assets/me-portrait.jpg";
 import { createUseStyles } from "react-jss";
 import { useTransition, animated, config } from "react-spring";
 
@@ -45,14 +44,18 @@ const useStyles = createUseStyles({
 
 export const Hero = () => {
   const classes = useStyles();
+
+  const profilePic = "https://github.com/mrmcpowned.png";
+
   let elements = [
     "",
-    <img src={portrait} className={classes.portrait} />,
+    <img src={profilePic} className={classes.portrait} alt="Portrait of Chris" />,
     <h1 className={classes.heroText}>
       Hey there, I'm <span className={classes.name}>Chris</span>!
     </h1>,
     <h2 className={classes.subText}>I write software and stuff.</h2>,
   ];
+
   const heroAnimation = useTransition(elements, {
     config: config.slow,
     keys: elements.map((item, index) => index),

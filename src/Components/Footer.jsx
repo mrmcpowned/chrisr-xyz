@@ -84,7 +84,7 @@ export const Footer = () => {
         <ul>
           {transitions((style, item) => (
             <animated.li style={style}>
-              <a href={item.link} className={classes.link} target="_blank">
+              <a href={item.link} className={classes.link} target="_blank" rel="noreferrer">
                 {item.text}
               </a>
             </animated.li>
