@@ -18,7 +18,7 @@ const useStyles = createUseStyles({
     },
     "& ul li": {
       marginBottom: "calc(.5vw + .5vh)",
-    }
+    },
   },
   link: {
     "&:hover": {
@@ -55,6 +55,10 @@ export const Footer = () => {
       text: "Instagram",
       link: "https://instagram.com/chrisr.xyz",
     },
+    {
+      text: "GamePad Viewer",
+      link: "https://gamepadviewer.com",
+    },
   ];
 
   const items = visible ? links : [];
@@ -84,7 +88,12 @@ export const Footer = () => {
         <ul>
           {transitions((style, item) => (
             <animated.li style={style}>
-              <a href={item.link} className={classes.link} target="_blank" rel="noreferrer">
+              <a
+                href={item.link}
+                className={classes.link}
+                target="_blank"
+                rel="noreferrer"
+              >
                 {item.text}
               </a>
             </animated.li>
